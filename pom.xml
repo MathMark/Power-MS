@@ -30,7 +30,7 @@
         <junit.version>3.8.1</junit.version>
         <tomcat.jasper.version>9.0.29</tomcat.jasper.version>
         <jstl.version>1.2</jstl.version>
-        <springboot.version>2.0.7.RELEASE</springboot.version>
+        <springboot.version>2.5.12</springboot.version>
         <javax.mail.version>1.5.0-b01</javax.mail.version>
         <lombok.version>1.18.10</lombok.version>
     </properties>
