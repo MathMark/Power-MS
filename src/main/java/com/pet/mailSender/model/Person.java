@@ -2,8 +2,15 @@ package com.pet.mailSender.model;
 
 import com.pet.mailSender.model.annotations.CsvField;
 import com.pet.mailSender.model.enums.EmailStatus;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.*;
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 

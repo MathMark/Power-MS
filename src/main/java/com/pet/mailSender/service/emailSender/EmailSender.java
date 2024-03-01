@@ -1,7 +1,6 @@
 package com.pet.mailSender.service.emailSender;
 
 import com.pet.mailSender.config.properties.MailProperties;
-import com.pet.mailSender.dao.Dao;
 import com.pet.mailSender.model.Account;
 import com.pet.mailSender.model.Campaign;
 import com.pet.mailSender.model.enums.CampaignStatus;
@@ -19,11 +18,11 @@ import java.util.*;
 public class EmailSender implements Runnable {
 
     private Properties properties;
-    private Dao<Campaign> campaignDao;
+    //private Dao<Campaign> campaignDao;
     private ProgressCalculator progressCalculator;
 
-    public EmailSender(Dao<Campaign> campaignDao, ProgressCalculator progressCalculator, MailProperties mailProperties) {
-        this.campaignDao = campaignDao;
+    public EmailSender(ProgressCalculator progressCalculator, MailProperties mailProperties) {
+        //this.campaignDao = campaignDao;
         this.progressCalculator = progressCalculator;
         initializeProperties(mailProperties);
     }
@@ -62,7 +61,7 @@ public class EmailSender implements Runnable {
                 if(Thread.currentThread().isInterrupted()){
                     campaign.getEmailStatistics().setCampaignStatus(CampaignStatus.STOPPED);
                     System.out.println(campaign.getTitle() + " " + campaign.getEmailStatistics().getCampaignStatus());
-                    campaignDao.update(campaign);
+                    //campaignDao.update(campaign);
                     isStopped = true;
                     break;
                 }
@@ -89,7 +88,7 @@ public class EmailSender implements Runnable {
                         campaign.getEmailStatistics().setProgress(progressCalculator.getProgress(campaign.getPeople().size(),
                                 campaign.getEmailStatistics().getSentEmailsCount()));
 
-                        campaignDao.update(campaign);
+                        //campaignDao.update(campaign);
                         Thread.sleep(campaign.getDelay());
                     }
 
@@ -104,7 +103,7 @@ public class EmailSender implements Runnable {
         }catch (InterruptedException e){
             campaign.getEmailStatistics().setCampaignStatus(CampaignStatus.STOPPED);
             System.out.println(campaign.getTitle() + " " + campaign.getEmailStatistics().getCampaignStatus());
-            campaignDao.update(campaign);
+            //campaignDao.update(campaign);
             isStopped = true;
         }
 

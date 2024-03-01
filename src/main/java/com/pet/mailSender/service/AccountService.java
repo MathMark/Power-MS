@@ -1,32 +1,28 @@
 package com.pet.mailSender.service;
 
-import com.pet.mailSender.dao.Dao;
-import com.pet.mailSender.dao.imp.AccountDao;
 import com.pet.mailSender.model.Account;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.pet.mailSender.repository.AccountRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class AccountService {
 
-    private Dao<Account> accountDao;
-
-    public AccountService(Dao<Account> accountDao) {
-        this.accountDao = accountDao;
-    }
+    private final AccountRepository accountRepository;
 
     public List<Account> getAccounts(){
-        return accountDao.getAll();
+        return accountRepository.findAll();
     }
 
     public Account getAccount(int id){
-        return accountDao.getById(id);
+        return accountRepository.findById(id).get();
     }
 
     public void save(Account account){
-        accountDao.add(account);
+        accountRepository.save(account);
     }
 
 }

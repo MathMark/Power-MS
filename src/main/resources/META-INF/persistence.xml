@@ -4,16 +4,16 @@
              version="2.0">
     <persistence-unit name="com.pet.mailSender.model">
         <properties>
-            <!--<property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
             <property name="hibernate.connection.url" value="jdbc:h2:mem:main"/>
-            <property name="hibernate.show_sql" value="false"/>-->
-            <property name="hibernate.hbm2ddl.auto" value="create" />
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
-            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/emailSender?useUnicode=true&amp;serverTimezone=UTC" />
-            <property name="hibernate.connection.username" value="root" />
-            <property name="hibernate.connection.password" value="1997" />
+            <property name="hibernate.show_sql" value="false"/>
+<!--            <property name="hibernate.hbm2ddl.auto" value="create" />-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />-->
+<!--            <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />-->
+<!--            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/emailSender?useUnicode=true&amp;serverTimezone=UTC" />-->
+<!--            <property name="hibernate.connection.username" value="root" />-->
+<!--            <property name="hibernate.connection.password" value="1997" />-->
         </properties>
     </persistence-unit>
 </persistence>

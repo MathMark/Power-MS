@@ -51,8 +51,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public Validator getValidator() {
-        LocalValidatorFactoryBean validator = new LocalValidatorFactoryBean();
-        validator.setValidationMessageSource(messageSource());
-        return validator;
+//        LocalValidatorFactoryBean validator = new LocalValidatorFactoryBean();
+//        validator.setValidationMessageSource(messageSource());
+//        return validator;
+        return null;
     }
 }

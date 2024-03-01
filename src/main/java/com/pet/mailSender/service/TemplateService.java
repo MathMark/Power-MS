@@ -1,22 +1,23 @@
 package com.pet.mailSender.service;
 
-import com.pet.mailSender.dao.Dao;
 import com.pet.mailSender.model.Template;
+import com.pet.mailSender.repository.TemplateRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
+@RequiredArgsConstructor
 public class TemplateService {
 
-    private Dao<Template> templateDao;
-
-    public TemplateService(Dao<Template> templateDao) {
-        this.templateDao = templateDao;
-    }
-
+    private final TemplateRepository templateDao;
+    
     public List<Template> getAll(){
-        return templateDao.getAll();
+        return templateDao.findAll();
     }
 
     public void save(Template template){
-        templateDao.add(template);
+        templateDao.save(template);
     }
 }

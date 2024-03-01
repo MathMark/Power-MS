@@ -18,30 +18,31 @@ public class CsvParser<T> implements Parser<T> {
 
     @Override
     public List<T> getJavaObjects(InputStream inputStream, Class clazz) {
-        List<List<String>> records = getRecords(inputStream);
-        List<String> headers = records.get(0);
-        Map<Integer, Field> d = findCoincidence(getAnnotatedFields(clazz), headers);
-
-        List<T> objects = new ArrayList<>();
-
-        try {
-            for(int i = 1; i < records.size(); i++){
-                Object instance = Class.forName(clazz.getName()).newInstance();
-                for(int j = 0; j < records.get(i).size(); j++){
-                    Field field = d.get(j);
-                    if(field != null){
-                        new PropertyDescriptor(field.getName(), clazz)
-                                .getWriteMethod()
-                                .invoke(instance, records.get(i).get(j));
-                    }
-                }
-                objects.add((T) instance);
-            }
-        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | IntrospectionException | InvocationTargetException e) {
-            e.printStackTrace();
-        }
-
-        return objects;
+//        List<List<String>> records = getRecords(inputStream);
+//        List<String> headers = records.get(0);
+//        Map<Integer, Field> d = findCoincidence(getAnnotatedFields(clazz), headers);
+//
+//        List<T> objects = new ArrayList<>();
+//
+//        try {
+//            for(int i = 1; i < records.size(); i++){
+//                Object instance = Class.forName(clazz.getName()).newInstance();
+//                for(int j = 0; j < records.get(i).size(); j++){
+//                    Field field = d.get(j);
+//                    if(field != null){
+//                        new PropertyDescriptor(field.getName(), clazz)
+//                                .getWriteMethod()
+//                                .invoke(instance, records.get(i).get(j));
+//                    }
+//                }
+//                objects.add((T) instance);
+//            }
+//        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | IntrospectionException | InvocationTargetException e) {
+//            e.printStackTrace();
+//        }
+//
+//        return objects;
+        return null;
     }
 
     private List<List<String>> getRecords(InputStream inputStream){
