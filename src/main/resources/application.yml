@@ -4,3 +4,9 @@ mail-sender:
     port: 587
     auth: true
     starttls: true
+    
+sprin:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp

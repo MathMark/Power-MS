@@ -23,10 +23,10 @@ public class ApplicationConfiguration {
         return new CsvParser<Person>();
     }
 
-    @Bean
-    public ProgressCalculator progressCalculator() {
-        return new ProgressCalculator();
-    }
+//    @Bean
+//    public ProgressCalculator progressCalculator() {
+//        return new ProgressCalculator();
+//    }
 
     @Bean
     @Scope("prototype")
