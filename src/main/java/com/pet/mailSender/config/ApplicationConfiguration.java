@@ -22,6 +22,7 @@ public class ApplicationConfiguration {
     public Parser<Person> personParser() {
         return new CsvParser<Person>();
     }
+    
 
 //    @Bean
 //    public ProgressCalculator progressCalculator() {

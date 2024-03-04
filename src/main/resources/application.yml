@@ -1,12 +1,21 @@
 mail-sender:
   mail-config:
     host: smtp.gmail.com
-    port: 587
+    port: 465
     auth: true
     starttls: true
     
-sprin:
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret: 
   mvc:
     view:
       prefix: /WEB-INF/view/
       suffix: .jsp
+
+
